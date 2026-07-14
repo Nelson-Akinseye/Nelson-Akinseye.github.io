@@ -164,6 +164,17 @@
 			</ul>
 		</div>
 	</section>
+				<!-- Quick fix to force active nav highlight switching -->
+<script>
+	document.querySelectorAll('#nav ul li a').forEach(link => {
+		link.addEventListener('click', function() {
+			// 1. Remove the active class from whichever link currently has it
+			document.querySelectorAll('#nav ul li a').forEach(item => item.classList.remove('active'));
+			// 2. Add the active class immediately to the clicked link
+			this.classList.add('active');
+		});
+	});
+</script>
 
 	</body>
 </html>
